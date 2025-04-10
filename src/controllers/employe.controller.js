@@ -23,7 +23,6 @@ export const getEmployees =async  (req, res) => {
 export const getEmployee = async  (req, res) => {
 
   try {
-    throw new Error('Error Inesperado')
     console.log(req.params.id);
     const [rows] =  await pool.query('SELECT * FROM employee WHERE id = ?', [req.params.id])
     if (rows.length <= 0 ) return res.status(404).json({
