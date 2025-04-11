@@ -5,8 +5,7 @@ import {pool} from '../db.js'
 
 //GET
 export const getEmployees = async  (req, res) => {
-  console.log(req);
-  
+
   try {
     
     const [rows] =  await pool.query('SELECT * FROM employee') 
@@ -36,7 +35,7 @@ export const getEmployee = async  (req, res) => {
   } catch (error) {
 
     return res.status(500).json({
-      message: 'Something'
+      message: 'Something went wrong'
     })
     
   }
@@ -61,7 +60,7 @@ export const postEmployees = async (req, res) => {
 
 
     return res.status(500).json({
-      message: 'Something'
+      message: 'Something went wrong'
     })
     
   }
@@ -88,7 +87,7 @@ res.json(rows[0])
 } catch (error) {
   
   return res.status(500).json({
-    message: 'Something'
+    message: 'Something went wrong'
   })
 }
 
@@ -108,7 +107,7 @@ try {
 } catch (error) {
 
   return res.status(500).json({
-    message: 'Something'
+    message: 'Something went wrong'
   })
   
 }
